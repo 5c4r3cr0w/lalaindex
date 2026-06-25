@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom"
+import { HashRouter, Routes, Route, useNavigate } from "react-router-dom"
 import { collection, getDocs } from "firebase/firestore"
 import { db } from "./firebase/config"
 import Fuse from "fuse.js"
@@ -62,12 +62,12 @@ function Home() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/company/:slug" element={<CompanyPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
